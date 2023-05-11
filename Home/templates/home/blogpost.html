@@ -1,0 +1,50 @@
+{% extends 'base/base.html' %}
+
+
+{% block title %}
+All Blog Post
+{% endblock %}
+{% block content %}
+
+<div class="page-wrapper">
+    <header class="section-blog-post-header">
+        <div class="padding-global">
+            <div class="container-medium">
+                <div class="padding-section-large">
+                    <div class="max-width-medium align-center">
+                        <div class="blog-post-header-title-wrapper">
+                            <div class="margin-bottom margin-small">
+                                <h1 class="heading-style-h3 text-align-center">{{blog_post.title}}</h1>
+                            </div>
+                            <div class="blog-post-header-content-top">
+                                <div class="blog-post-header-author-wrapper align-center">
+                                    <div class="blog-post-header-author-text">
+                                        <div>By </div>
+                                    </div>
+                                    <div class="blog-post-header-author-text"><a href="/about" class="w-inline-block">
+                                            <div class="text-color-neutral-500">{{blog_post.author}}</div>
+                                        </a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog-post-content">
+                            <div class="text-rich-text w-richtext">
+                                {{blog_post.content.html|safe}}
+                            </div>
+                        </div>
+                        <div class="content-divider"></div>
+                        <div class="text-align-center">
+                            <div class="max-width-large align-center">
+                                <div class="margin-bottom margin-small"><a href="{%url 'all_blogs'%}">See All Post</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
+
+<div style="opacity:1;display:block" class="page-loader-white-bg"></div>
+{% endblock %}

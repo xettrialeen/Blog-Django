@@ -1,0 +1,64 @@
+{% extends 'base/base.html' %}
+{% block title %}
+Contact us
+{% endblock %}
+{% block content %}
+
+<section class="section-contact">
+    <div class="padding-global">
+        <div class="container-small">
+            <div class="padding-section-large">
+                <div class="margin-bottom margin-large">
+                    <div class="text-align-center">
+                        <div class="max-width-large align-center">
+                            <div class="margin-bottom margin-small">
+                                <h2>Get in touch</h2>
+                            </div>
+                            <p>
+                                Any feedbacks or suggestion?, Reach out to me by
+                                submitting below form
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="max-width-medium align-center">
+                    <div class="contact-component ">
+                        <form  method="post" 
+                             class="contact-form">
+                            {% csrf_token %}
+                            <div class="form-feild-wrapper">
+                                <input type="text" class="form-input w-input" maxlength="256" name="Name"
+                                    data-name="Name" placeholder="Name" id="Name" required="" />
+                            </div>
+                            <div class="form-feild-wrapper">
+                                <input type="email" class="form-input w-input" maxlength="256" name="Email"
+                                    data-name="Email" placeholder="Email" id="Email" required="" />
+                            </div>
+                            <div class="form-feild-wrapper">
+                                <textarea placeholder="Type your message..." maxlength="5000" id="Message"
+                                    name="Message" data-name="Message" required=""
+                                    class="form-input is-text-area w-input"></textarea>
+                            </div>
+                          
+
+                            <button type="submit" class="button form w-button" data-wait="Please wait..." id="w-node-_986c3cbd-da92-7cf7-45c0-525c5678ff1d-c3bf16da">
+                                Sumbit
+                            </button>
+                        </form>
+                        <div class="success-message w-form-done" >
+                            <div class="success-text">
+                                Thank you! Your submission has been received!
+                            </div>
+                        </div>
+                        <div class="error-message w-form-fail">
+                            <div class="error-text">
+                                Oops! Something went wrong while submitting the form.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock%}
