@@ -20,7 +20,7 @@ def all_blogs(request):
         queryset = BlogPost.objects.all().order_by('-pub_date')
         context = {'queryset': queryset}
 
-        print("printed")
+     
     return render(request, 'home/blogs.html', context)
 
 
@@ -45,7 +45,7 @@ def my_view(request):
 
 
 def contact_page(request):
-    print(request.method)
+  
     if request.method == 'POST':
         print(request.method)
         name = request.POST.get('Name')
@@ -59,6 +59,6 @@ def contact_page(request):
         )
 
 
-        print(name,email,message)
+      
 
     return render(request, 'about/contact.html')
